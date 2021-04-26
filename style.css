@@ -1,0 +1,47 @@
+body {
+  background-color: #e6e2d3;
+}
+
+.title {
+  color: black;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pointer {
+  display: grid;
+  grid-template-columns: repeat(7, 100px);
+  grid-template-rows: repeat(7, 100px);
+  width: 600px;
+  height: 300px;
+}
+
+.pins {
+  border: black;
+}
+
+
+.grid {
+  display: grid;
+  background-color: #b9936c;
+  grid-template-columns: repeat(7, 100px);
+  grid-template-columns: repeat(7, 100px);
+  width: 800px;
+  height: 600px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.tokenslots {
+  border: 5px solid #b9936c;
+  border-radius: 50%;
+  padding: 5%;
+  background-color: white;
+  outline: black;
+
+}
+
+.tokenslots:hover {
+  background-color: rgba(253, 220, 112, 0.623);
+}
