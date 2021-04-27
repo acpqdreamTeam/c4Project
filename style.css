@@ -1,5 +1,5 @@
 body {
-  background-color: #f3e2a7;
+  background-color: #e6e2d3;
 }
 
 .title {
@@ -9,39 +9,71 @@ body {
   text-align: center;
 }
 
-.pointer {
-  display: grid;
-  grid-template-columns: repeat(7, 100px);
-  grid-template-rows: repeat(7, 100px);
-  width: 600px;
-  height: 300px;
-}
+ .pointer {
+   display: grid;
+     height: 20px;
+    margin-bottom: 40px;
+    margin-left: 20px;
+    justify-content: center;
+    grid-template-columns: repeat(7, 100px);
+    padding-right: 64px;
+ 
+} 
 
-.pins {
-  border: black;
+.arrow {
+ display: inline-block;
+ justify-content: center;
+  width: 7%;
+  margin: 0 auto;
+  color: black;
+  font-size: 45px;
+  background-color:  #e6e2d3;
+  border: none;
+  border-radius: 30%;
+  cursor: pointer;
+  box-shadow: wheat;
+  }
+
+.arrow:hover {
+  color:mintcream;
 }
 
 
 .grid {
-  display: grid;
-  background-color: #b9936c;
-  grid-template-columns: repeat(7, 100px);
-  grid-template-columns: repeat(7, 100px);
-  width: 800px;
-  height: 600px;
-  margin: 0 auto;
-  justify-content: center;
+   position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 700px;
+    height: 700px;
+    top: 11rem;
+    border: 5px solid black;
+    padding: 2rem;
+    box-shadow: 10px 15px #e6e2d3;
+   background-color: #b9936c; 
 }
 
-.tokenslots {
-  border: 5px solid #b9936c;
+
+.grid table tr td {
+  width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    margin: 100px;
+}
+
+#fill {
+  background-image: url('https://source.unsplash.com/random/150x150');
   border-radius: 50%;
-  padding: 5%;
-  background-color: white;
-  outline: black;
-
+  height:50px;
+  width: 50px;
+  cursor: pointer;
 }
 
-.tokenslots:hover {
+
+
+.grid table tr td:hover {
   background-color: rgba(253, 220, 112, 0.623);
 }
+
