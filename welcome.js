@@ -2,7 +2,10 @@
 
 const acc = document.getElementsByClassName("accordion");
 const pan = document.getElementsByClassName("panel");
-
+const playerNames= 
+// Cut from index.html to prevent merge conflict
+<a href="welcome.html">Welcome Page</a>
+//==============================================
 function handleClick(event) {
     const clickedTarget=event.target;
     const id = clickedTarget.id;
@@ -21,3 +24,14 @@ function handleClick(event) {
 
 console.log("Hello!");
 acc.addEventListener('click', handleClick);
+
+// =================Local Storage Code=======================
+
+function storeNames() {
+    // stringify the drinks 
+    console.log(Player.name);
+    let stringifiedNames = JSON.stringify(Coffee.drinks);
+    console.log(stringifiedNames);
+    // place stringified drinks in storage
+    localStorage.setItem('previousOrders', stringifiedOrders);
+  }
