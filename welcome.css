@@ -1,57 +1,58 @@
-h1{
-  color:cornsilk;
+*{
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+  text-align:center;
 }
 
-h2{
-  color:cornsilk;
-}
-
-.accordion {
-  background-color: gray;
-  cursor: pointer;
-  padding: 18px;
-  max-width: 800px;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  transition: 0.4s;
-  color:cornsilk;
-}
-
-.accordion:hover {
-  background-color: rgb(79, 65, 204);
-}
-  
-.accordion:after {
-  content: "+";
-  color: rgb(7, 7, 2);
-  font-weight: bold;
-  float: left;
-  margin-left: 5px;
-}
-  
-body {
-  background-color: rgb(108, 176, 240);
-}
-  
-.accordion .contentBx {
-  position: relative;
-  margin: 10px 20px;
-  padding: 0px 18px;
-  background-color: rgb(90, 145, 2);
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
+header{
   color: cornsilk;
 }
 
-.accordion .contentBx .label {
-  color:cornsilk
-  position:relative;
-  padding: 10px;
+#title{
+  color: pink;
 }
 
-.accordian .active:after{
-  content: '-';
+.contentBx {
+  background: gray;
+  color: cornsilk;
+  cursor: pointer;
+  padding: 5px;
+  width: 50%;
+  display:block;
+  margin: auto;
+  margin-bottom: 0;
+}
+
+body {
+  background-color: rgb(108, 176, 240);
+  min-height: 100vh;
+}
+
+.contentBx::before{
+  content: '+';
+  float: left;
+  top:50%;
+  right: 20 px;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+}
+
+.content {
+  background-color: cornsilk;
+  margin: auto;
+  width: 50%;
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  } 
+
+.contentBx.active::before{
+  content:'-';
+  font-size:1.5em;
+  transition: 0.2s;
+}
+.content, p{
+  top:50%;
+  right: 20 px;
+  transition: 2s;
 }
