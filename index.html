@@ -3,52 +3,51 @@
     <head>
         <title>Welcome Page</title>
         <link rel="stylesheet" href="welcome.css">
-        <script src="welcome.js"></script>
+        <script src="./welcome.js"></script>
     </head>
     <body>
         <header>
             <h1>Welcome to our game, CONNECT FOUR!</h1>
             <h2>Please review the rules, then enter your name to start playing!</h2>
         </header>
-        <div class="accordian">Directions</div>
-        <div class="panel">
-            <p> On your turn, select (with your cursor) which column in which you want to place your token!</p>
-        </div>
-        <div class ="accordian">To Win</div>
-        <div class="panel">
-            <p>Connect 4 of your tokens in a row in any 8 directions! Careful... don't let your opponent Connect Four first! Good Luck!
-            </p>
-        </div>
-        <div class="accordian">Start Playing</div>
-        <div class="panel">
-            <p>
-                <form>
-                    <label for="PoneName">Player 1 Name:</label>
-                    <input type="text" id="PoneName" name="PoneName">
-                    <label for="PtwoName">Player 2 Name:</label>
-                    <input type="text" id="PtwoName" name="PtwoName">
-                </form>
-            </p>
-            <p>
-                <button type="button" class="play">Play Player vs Player</button>
-                <button type="button" class="play">Play Player vs AI</button>
-            </p>
-        </div>
-        <script>
-        const acc = document.getElementsByClassName("accordion");
-        let i;
-            for (let i = 0; i < acc.length; i++) {
-                acc[i].addEventListener('click', function() {
-                    console.log('I was clicked!');
-                    this.classList.toggle('active');
-                    const panel = acc[i].nextElementSibling;
-                    if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                    } else {
-                    panel.style.maxHeight = panel.scrollHeight + "px";
-                        } 
-                    });
-                }
-        </script>
+        <section>
+            <div class="accordion">
+                <div class="contentBx">
+                    <div class="label">Directions</div>
+                    <div class="content">
+                        <p>On your turn, select (with your cursor) which column in which you want to place your token!
+                        </p>
+                    </div>
+                </div>
+            </div>    
+            <div class="accordion">
+                <div class="contentBx">
+                    <div class="label">To Win</div>
+                    <div class="content">
+                        <p>Connect 4 of your tokens in a row in any 8 directions! Careful... don't let your opponent Connect Four first! Good Luck!
+                        </p>
+                    </div>
+                </div>
+            </div>    
+            <div class="accordion">
+                <div class="contentBx">
+                    <div class="label">Start Playing!</div>
+                    <div class="content">
+                        <p>
+                            <form>
+                                <label for="PoneName">Player 1 Name:</label>
+                                <input type="text" id="PoneName" name="PoneName">
+                                <label for="PtwoName">Player 2 Name:</label>
+                                <input type="text" id="PtwoName" name="PtwoName">
+                            </form>
+                        </p>
+                        <p>
+                            <button type="button" class="play">Play Player vs Player</button>
+                            <button type="button" class="play">Play Player vs AI</button>
+                        </p>
+                    </div>
+                </div>        
+            </div>
+        </section>
     </body>
 </html>
