@@ -4,7 +4,7 @@ const acc = document.getElementsByClassName("accordion");
 function slide(){
     let i;
     for (let i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", (e) =>{
+        acc[i].addEventListener("click", function() {
             console.log('I was clicked!');
             this.classList.toggle('active'); 
             const panel = acc[i].nextElementSibling;
@@ -17,14 +17,24 @@ function slide(){
     }
 }
 // =================Local Storage Code=======================
+const playeroneInput = document.getElementById("PoneName") 
+const playertwoInput = document.getElementById("PtwoName")
+ 
+function storeplayerOne() {
+    // stringify the drinks 
+    console.log(`${playeroneInput}`);
+    let stringifiedName = JSON.stringify(playeroneInput);
+    console.log(stringifiedName);
+    // place stringified drinks in storage
+    localStorage.setItem('Player 1', `${playeroneInput}`);
+  }
 
-// function storeNames() {
-//     // stringify the drinks 
-//     console.log(Player.name);
-//     let stringifiedNames = JSON.stringify(Coffee.drinks);
-//     console.log(stringifiedNames);
-//     // place stringified drinks in storage
-//     localStorage.setItem('previousOrders', stringifiedOrders);
-//   }
-
+function storeplayerTwo(){
+    console.log(`${playertwoInput}`)
+    let stringifiedName = JSON.stringify(playertwoInput);
+    console.log(stringifiedName);
+    localStorage.setItem('Player 2', `${playertwoInput}`)
+}
+storeplayerOne();
+storeplayerTwo();
 slide();
