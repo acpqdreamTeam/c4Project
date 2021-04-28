@@ -16,7 +16,7 @@ function slide(){
         });
     }
 }
-// =================Local Storage Code=======================
+// =================Local Store Storage Code=======================
 const playeroneInput = document.getElementById("PoneName") 
 const playertwoInput = document.getElementById("PtwoName")
  
@@ -35,6 +35,10 @@ function storeplayerTwo(){
     console.log(stringifiedName);
     localStorage.setItem('Player 2', `${playertwoInput}`)
 }
+//=================Local Get Storage Code==========================
+
+
+
 storeplayerOne();
 storeplayerTwo();
 slide();
