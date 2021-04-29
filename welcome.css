@@ -1,36 +1,58 @@
-.accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-  }
-  
-  .active, .accordion:hover {
-    background-color: #ccc;
-  }
-  
-  .accordion:active {
-    content: "+";
-    color: #777;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
-  }
-  
-  .active:after {
-    content: "-";
-  }
-  
-  .panel {
-    padding: 0 18px;
-    background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-  }
+*{
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+  text-align:center;
+}
+
+header{
+  color: cornsilk;
+}
+
+#title{
+  color: pink;
+}
+
+.contentBx {
+  background: gray;
+  color: cornsilk;
+  cursor: pointer;
+  padding: 5px;
+  width: 50%;
+  display:block;
+  margin: auto;
+  margin-bottom: 0;
+}
+
+body {
+  background-color: rgb(108, 176, 240);
+  min-height: 100vh;
+}
+
+.contentBx::before{
+  content: '+';
+  float: left;
+  top:50%;
+  right: 20 px;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+}
+
+.content {
+  background-color: cornsilk;
+  margin: auto;
+  width: 50%;
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  } 
+
+.contentBx.active::before{
+  content:'-';
+  font-size:1.5em;
+  transition: 0.2s;
+}
+.content, p{
+  top:50%;
+  right: 20 px;
+  transition: 2s;
+}
