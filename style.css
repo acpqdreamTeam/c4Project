@@ -9,47 +9,53 @@ body {
   text-align: center;
 }
 
- .pointer {
-   display: grid;
-     height: 20px;
-    margin-bottom: 40px;
-    margin-left: 20px;
-    justify-content: center;
-    grid-template-columns: repeat(7, 100px);
-    padding-right: 64px;
- 
-} 
+.pointer {
+  display: grid;
+  height: 20px;
+  margin-bottom: 40px;
+  margin-left: 20px;
+  justify-content: center;
+  grid-template-columns: repeat(7, 100px);
+  padding-right: 64px;
+}
 
 .arrow {
- display: inline-block;
- justify-content: center;
+  display: inline-block;
+  justify-content: center;
   width: 7%;
   margin: 0 auto;
   color: black;
   font-size: 45px;
-  background-color:  #e6e2d3;
+  background-color: #e6e2d3;
   border: none;
   border-radius: 30%;
   cursor: pointer;
   box-shadow: wheat;
-  }
-
-.arrow:hover {
-  color:mintcream;
 }
 
+.arrow:hover {
+  color: mintcream;
+}
+
+@media screen and (max-width: 992px) and (min-width: 768px) {
+  .pointer {
+    width: 8.7%;
+  }
+}
 
 .grid {
-   position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    width: 700px;
-    height: 700px;
-    top: 11rem;
-    border: 5px solid black;
-    padding: 2rem;
-    box-shadow: 10px 15px #e6e2d3;
-   background-color: #b9936c; 
+  border-spacing: 55%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+  width: 710px;
+  height: 780px;
+  top: 7rem;
+  border-right: black solid 22px;
+  border-left: black solid 22px;
+  padding: 2rem;
+  box-shadow: 10px 15px #e6e2d3;
+  background-color: #b9936c;
 }
 
 .white {
@@ -64,27 +70,85 @@ body {
   background-color: yellow;
 }
 
+.dogecoin1 {
+  background-image: url('Quin1.png');
+  background-repeat: no-repeat;
+  background-size: 129%;
+  background-position: center;
+}
+
+.dogecoin2 {
+  background-image: url('Quin2.png');
+  background-repeat: no-repeat;
+  background-size: 129%;
+  background-position: center;
+}
+
 .grid table tr td {
+  border-collapse: separate;
+  border-spacing: 300px;
+  width: 100px;
+  height: 100px;
+  border: 2px solid black;
+  border-radius: 60%;
+  cursor: pointer;
+  margin: 100px;
+}
+
+#resetbutton {
+  position: absolute;
+  top: 928px;
+  width: 150px;
+  height: 150px;
+  margin-left: 22%;
+  text-align: center;
+}
+
+#dogecoin {
+  background-color: salmon;
   width: 100px;
   height: 100px;
   border: 2px solid black;
   border-radius: 50%;
   cursor: pointer;
-  margin: 100px;
+  margin: 0 auto;
 }
 
+#dogecoin {
+  display: block;
+  animation: drop 2s linear;
+}
 
-#fill {
-  background-image: url('https://source.unsplash.com/random/150x150');
-  border-radius: 50%;
-  height:50px;
-  width: 50px;
+@keyframes drop {
+  0% {
+    transform: translateY(-800px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes clearboard {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(700px);
+  }
+}
+
+#reset {
   cursor: pointer;
+  border: 2px solid black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
-
 
 .grid table tr td:hover {
   background-color: rgba(253, 220, 112, 0.623);
+}
+
+table {
+ border-collapse: separate;
+ border-spacing: 17px 17px;
 }
 

@@ -1,71 +1,64 @@
 <!DOCTYPE html>
+
 <head>
   <title>Connect 4</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <div class="title">
+  <!-- <div class="title">
     <h2>Welcome Player 1/ Player 2</h2>
 
 
     <h3>Click Arrow To Drop Coin</h3>
-    </div>
+  </div> -->
 
-    <div id = 'activePlayer'>Bob</div>
+  <div id='activePlayer'>Bob</div>
 
-    <div class="pointer">
+  <div class="pointer">
 
-       <button id="arrow1" type="button" class="arrow">
-         <span class="button_icon">
-           <ion-icon name="arrow-down-circle-outline"></ion-icon>
-           </span>
-       </button>
-       <button id="arrow2" type="button" class="arrow">
-          <span class="button_icon">
-           <ion-icon name="arrow-down-circle-outline"></ion-icon>
-           </span>
-       </button>
-       <button id="arrow3" type="button" class="arrow">
-          <span class="button_icon">
-           <ion-icon name="arrow-down-circle-outline"></ion-icon>
-           </span>
-       </button>
-       <button id="arrow4" type="button" class="arrow">
-          <span class="button_icon">
-           <ion-icon name="arrow-down-circle-outline"></ion-icon>
-           </span>
-       </button>
-       <button id="arrow5" type="button" class="arrow">
-          <span class="button_icon">
-           <ion-icon name="arrow-down-circle-outline"></ion-icon>
-           </span>
-       </button>
-       <button id="arrow6" type="button" class="arrow">
-          <span class="button_icon">
-           <ion-icon name="arrow-down-circle-outline"></ion-icon>
-           </span>
-       </button>
-       <button  id="arrow7" type="button" class="arrow">
-          <span class="button_icon">
-           <ion-icon name="arrow-down-circle-outline"></ion-icon>
-           </span>
-       </button>
-
-   </div>
+    <button id="arrow1" type="button" class="arrow">
+      <span class="button_icon">
+        <ion-icon name="arrow-down-circle-outline"></ion-icon>
+      </span>
+    </button>
+    <button id="arrow2" type="button" class="arrow">
+      <span class="button_icon">
+        <ion-icon name="arrow-down-circle-outline"></ion-icon>
+      </span>
+    </button>
+    <button id="arrow3" type="button" class="arrow">
+      <span class="button_icon">
+        <ion-icon name="arrow-down-circle-outline"></ion-icon>
+      </span>
+    </button>
+    <button id="arrow4" type="button" class="arrow">
+      <span class="button_icon">
+        <ion-icon name="arrow-down-circle-outline"></ion-icon>
+      </span>
+    </button>
+    <button id="arrow5" type="button" class="arrow">
+      <span class="button_icon">
+        <ion-icon name="arrow-down-circle-outline"></ion-icon>
+      </span>
+    </button>
+    <button id="arrow6" type="button" class="arrow">
+      <span class="button_icon">
+        <ion-icon name="arrow-down-circle-outline"></ion-icon>
+      </span>
+    </button>
+    <button id="arrow7" type="button" class="arrow">
+      <span class="button_icon">
+        <ion-icon name="arrow-down-circle-outline"></ion-icon>
+      </span>
+    </button>
+    
+  </div>
   <div class="grid">
-
+    
     <table>
       <tr>
-        <td class="white" draggable="true"></td>
-        <td class="white"></td>
-        <td class="white"></td>
-        <td class="white"></td>
-        <td class="white"></td>
-        <td class="white"></td>
-        <td class="white"></td>
-      </tr>
-       <tr>
         <td class="white"></td>
         <td class="white"></td>
         <td class="white"></td>
@@ -74,7 +67,7 @@
         <td class="white"></td>
         <td class="white"></td>
       </tr>
-       <tr>
+      <tr>
         <td class="white"></td>
         <td class="white"></td>
         <td class="white"></td>
@@ -83,7 +76,7 @@
         <td class="white"></td>
         <td class="white"></td>
       </tr>
-       <tr>
+      <tr>
         <td class="white"></td>
         <td class="white"></td>
         <td class="white"></td>
@@ -92,7 +85,7 @@
         <td class="white"></td>
         <td class="white"></td>
       </tr>
-       <tr>
+      <tr>
         <td class="white"></td>
         <td class="white"></td>
         <td class="white"></td>
@@ -101,7 +94,7 @@
         <td class="white"></td>
         <td class="white"></td>
       </tr>
-       <tr>
+      <tr>
         <td class="white"></td>
         <td class="white"></td>
         <td class="white"></td>
@@ -110,11 +103,28 @@
         <td class="white"></td>
         <td class="white"></td>
       </tr>
-  </table>
+      <tr>
+        <td class="white"></td>
+        <td class="white"></td>
+        <td class="white"></td>
+        <td class="white"></td>
+        <td class="white"></td>
+        <td class="white"></td>
+        <td class="white"></td>
+      </tr>
+    </table>
 
-</div>
-<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-<script src="arrow.js"></script>  
-<script src="app.js"></script>  
+  </div>
+
+
+
+  <div id="resetbutton">
+    <button id="reset">Reset</button>
+  </div>
+
+  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+  <!-- <script src="arrow.js"></script> -->
+  <script src="app.js"></script>
 </body>
+
 </html>

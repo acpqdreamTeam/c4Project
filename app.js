@@ -1,29 +1,23 @@
 /*
 // This section comes from: https://www.youtube.com/watch?v=Z_IaJQojun8&ab_channel=JustinKim
-
 //
-
 //If we use a table instead of divs we can use these for targeting
 var tableRow = document.getElementsByTagName('tr');
 var tableData = document.getElementsByTagName('td');
 var playerTurn = document.querySelector('.player-turn');
-
 //All cell had the class of "slot" put on them
 const slots = document.querySelectorAll('.slot');
 const resetBtn = document.querySelector('.reset');
-
 // Log cell coordinates when clicked
 for (i = 0; i < tableData.length; i ++){
     tableData[i].addEventListener('click', (e) =>{
         console.log(`${e.target.parentElement.rowIndex},${e.target.cellIndex}`)
     }
-
 //The actual change color bit that works with the concepts logged above
 function changeColor(e){
     // Get clicked column index
     let column = e.target.cellIndex;
     let row = [];
-
     for (i = 5; i > -1; i--){
         //Changing everything to be coin images that drop down may cause errors here
         if (tableRow[i].children[column].style.backgroundColor == 'white'){
@@ -60,29 +54,23 @@ function changeColor(e){
     }
    
 }
-
 //Example of childNodes
 var index = 1; // second element
 var child = document.getElementById('id33322010100167').childNodes[index]
-
 */
 
 /*
 //These sections come from https://www.youtube.com/watch?v=Hi5hEH1KNEc&ab_channel=JustinKim
-
 const getCellLocation = (cell) => {
   const classList = getClassListArray(cell);
-
   const rowClass = classList.find(className => className.includes('row'));
   const colClass = classList.find(className => className.includes('col'));
   const rowIndex = rowClass[4];
   const colIndex = colClass[4];
   const rowNumber = parseInt(rowIndex, 10);
   const colNumber = parseInt(colIndex, 10);
-
   return [rowNumber, colNumber];
 };
-
 This one seems more complicated and I would prefer to use the table method of the section above for the table pre-built functions
 */
 
@@ -97,8 +85,8 @@ let activePlayer = document.getElementById('activePlayer');
 //LOOKHERE: change later to something that reads out of memory
 let player1Name = 'Bob';
 let player2Name = 'Jeff';
-let player1Color = 'red';
-let player2Color = 'yellow';
+let player1Color = 'dogecoin1';
+let player2Color = 'dogecoin2';
 
 
 
@@ -336,7 +324,17 @@ function updateCords (xCord, yCord, direction){
   return [xCord, yCord];
 
 }
+// ========================Reset Button For Board ============================
+ 
+function resetBoard() {
+  for(let coinArea of tableDataCells) {
+    coinArea.className = 'white';
+  }
+  activePlayer.textContent = player1Name;
+}
 
+
+resetButton.addEventListener('click',resetBoard)
 //==============================Computer Logic Area==============================
 
   //Is any available move a win
