@@ -50,7 +50,7 @@ body {
   transform: translate(-50%);
   width: 710px;
   height: 750px;
-  top: 10rem;
+  top: 12rem;
   border-right: black solid 22px;
   border-left: black solid 22px;
   padding: 2rem;
@@ -95,7 +95,7 @@ body {
 }
 
 #resetbutton {
-  margin-top: 44.5%;
+  margin-top: 39%;
   margin-left: 20%;
   display: flex;
   text-align: center;
