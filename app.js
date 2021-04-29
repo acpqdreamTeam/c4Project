@@ -81,6 +81,7 @@ let tableRows = document.getElementsByTagName('tr');
 let tableDataCells = document.getElementsByTagName('td');
 //This needs a div setup with this class
 let activePlayer = document.getElementById('activePlayer');
+let resetButton = document.getElementById('reset');
 
 //LOOKHERE: change later to something that reads out of memory
 let player1Name = 'Bob';
