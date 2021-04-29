@@ -203,20 +203,34 @@ function checkLocation (xCord, yCord, colorTarget){
   
   //Setup local variables and data holders
   checkResultsArray = [0,0,0,0,0,0,0,0];
+  winningState = false;
   
+  //Run the recursive function in each direction
   for(let i = 0; i < 8; i ++){
     checkResultsArray[i] = checkDirection(xCord, yCord, i, colorTarget);
   }
 
+  //Look through each ray and see if any are long enough to win without the opposong direction
+  for(let result of checkResultsArray){
+    if (result > 3){
+      winningState = true;
+    }
+  }
+  
   //Add together opposing directions to see total length
   let ray1 = checkResultsArray[0] + checkResultsArray[4];
   let ray2 = checkResultsArray[1] + checkResultsArray[5];
   let ray3 = checkResultsArray[2] + checkResultsArray[6];
   let ray4 = checkResultsArray[3] + checkResultsArray[7];
 
-  //If any length large enough found you win. Searching for a length of 3 because we assume target location will either already have or will soon get the target color
+  //If any length large enough of opposing pairs enter win state. Need 5 because center point will be counted on each ray so you get one additional increment of the length
   if(ray1 > 4 || ray2 > 4 || ray3 > 4 || ray4 > 4){
     //This is a winning move
+    winningState = true;
+  }
+  
+  
+  if(winningState){
     console.log('You Win');
     //LOOKHERE this is where win logic should go
   }
