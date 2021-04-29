@@ -3,7 +3,6 @@
 const accordion = document.getElementsByClassName('contentBx');
 for (let i = 0; i < accordion.length; i++) {
             accordion[i].addEventListener('click', function() {
-                console.log('I was clicked!');
                 this.classList.toggle('active');
                 let panel=this.nextElementSibling;
                 if(panel.style.display==='block'){
@@ -13,24 +12,24 @@ for (let i = 0; i < accordion.length; i++) {
                 }
         });
     };
+
 // =================Local Store Storage Code=======================  
 function storeplayerOne() {
-    const playeroneInput = document.getElementById("PoneName")
-    // stringify the drinks 
-    console.log(playeroneInput);
+    const playeroneInput = document.getElementById("PoneName").value;
+    // stringify the names 
     let stringifiedName = JSON.stringify(playeroneInput);
-    console.log(stringifiedName);
-    // place stringified drinks in storage
+    // place stringified names in storage
     localStorage.setItem('Player 1', stringifiedName);
-  }
+}
 
 function storeplayerTwo(){
-    const playertwoInput = document.getElementById("PtwoName")
+    const playertwoInput = document.getElementById("PtwoName").value;
     console.log(playertwoInput)
     let stringifiedName = JSON.stringify(playertwoInput);
     console.log(stringifiedName);
-    localStorage.setItem('Player 2', stringifiedName)
+    localStorage.setItem('Player 2', stringifiedName);
 }
+
 //===================Play Button================================
 function startPlaying(){
     const playButton = document.getElementsByClassName('play');
@@ -42,22 +41,7 @@ function startPlaying(){
         });
     };
 };
-//=================Local Get Storage Code==========================
-function getplayerOne(){
-    let retrievedName = localStorage.getItem('Player 1');
-    console.log(retrievedName, "is Player 1's name")
-    if (retrievedName !== null) {
-        let parsedOrders = JSON.parse(retrievedName);
-        console.log(parsedOrders);
-    }
-}
 
-function getplayerTwo(){
-    let retrievedName = localStorage.getItem('Player 2');
-    console.log(retrievedName, "is Player 2's name")
-    if (retrievedName !== null) {
-        let parsedOrders = JSON.parse(retrievedName);
-        console.log(parsedOrders);
-    }
-}
+
+
 startPlaying();
