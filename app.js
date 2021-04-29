@@ -8,6 +8,7 @@ const arrows = document.getElementsByClassName('arrow');
 //This needs a div setup with this class
 let activePlayer = document.getElementById('activePlayer');
 let resetButton = document.getElementById('reset');
+let winnerAlert = document.getElementById('winningAlert')
 
 //LOOKHERE: change later to something that reads out of memory
 //=================Local Get Storage Code==========================
@@ -155,6 +156,7 @@ function checkLocation (xCord, yCord, colorTarget){
   
   
   if(winningState){
+    winnerAlert.textContent = `The Winner is ${activePlayer.textContent}`
     console.log('You Win');
     //LOOKHERE this is where win logic should go
   }
@@ -269,6 +271,7 @@ function resetBoard() {
     coinArea.className = 'white';
   }
   activePlayer.textContent = player1Name;
+  winnerAlert.textContent = ' ';
 }
 
 
