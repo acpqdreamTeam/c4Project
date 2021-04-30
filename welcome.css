@@ -5,26 +5,31 @@
 }
 
 header{
-  color: cornsilk;
+  color: #FBEEC1;
+  font-family: 'Bebas Neue', cursive;
 }
 
 #title{
-  color: pink;
+  color: black;
+  font-size: 1.5em;
 }
 
 .contentBx {
-  background: gray;
-  color: cornsilk;
+  background: #ac6f3a;
+  color:#FBEEC1;
   cursor: pointer;
   padding: 5px;
   width: 50%;
   display:block;
   margin: auto;
   margin-bottom: 0;
+  font-family: 'Bebas Neue', cursive;
+  font-size:1.9em;
+  font-stretch: expanded;
 }
 
 body {
-  background-color: rgb(108, 176, 240);
+  background-color: #659DBD;
   min-height: 100vh;
 }
 
@@ -38,12 +43,14 @@ body {
 }
 
 .content {
-  background-color: cornsilk;
+  background-color: #B1A296;
   margin: auto;
   width: 50%;
   padding: 0 18px;
   display: none;
   overflow: hidden;
+  color:#FBEEC1;
+  
   } 
 
 .contentBx.active::before{
@@ -55,4 +62,10 @@ body {
   top:50%;
   right: 20 px;
   transition: 2s;
+}
+
+.accordion{
+  border-style:solid;
+  border-width: 8px;
+  border-radius:6px;
 }
