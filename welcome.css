@@ -15,7 +15,7 @@ header{
 }
 
 .contentBx {
-  background: #ac6f3a;
+  background: #d45320c7;
   color:#FBEEC1;
   cursor: pointer;
   padding: 5px;
@@ -26,6 +26,10 @@ header{
   font-family: 'Bebas Neue', cursive;
   font-size:1.9em;
   font-stretch: expanded;
+  border-style:solid;
+  border-width: 8px;
+  border-radius:6px;
+  border-color: #8d8741;
 }
 
 body {
@@ -43,13 +47,16 @@ body {
 }
 
 .content {
-  background-color: #B1A296;
+  background-color: #746a62;
   margin: auto;
   width: 50%;
   padding: 0 18px;
   display: none;
   overflow: hidden;
   color:#FBEEC1;
+  border-left:black;
+  border-right:black;
+  border-: 5px;
   
   } 
 
@@ -64,8 +71,3 @@ body {
   transition: 2s;
 }
 
-.accordion{
-  border-style:solid;
-  border-width: 8px;
-  border-radius:6px;
-}
