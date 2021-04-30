@@ -3,7 +3,7 @@
 ## Connect Doge
 
 
-### Author:
+### Authors:
 
   - Charles Bofferding 
   - Alex Vogt 
@@ -14,11 +14,11 @@
 
 - [W3Schools](https://www.w3schools.com/) will show how W3 schools helped with figuring out a variety of different commands.
 
-- [Codepen](https://codepen.io/finnhvman/pen/xXpzVN) will show the inspiration for the coin effect in our Connect Doge
+- [Codepen](https://codepen.io/finnhvman/pen/xXpzVN) will show the inspiration for the coin effect in our Connect Doge.
 
-- [Trello](https://trello.com/quentinnapuuekicruz/boards) increased team productivity and assisted will a lot of process and documentation
+- [Trello](https://trello.com/quentinnapuuekicruz/boards) increased team productivity and assisted will a lot of process and documentation.
 
-- [Miro](https://miro.com/app/dashboard/) kept the team organized and allowed for the creation of a domain model, user stories, and lastly wireframe
+- [Miro](https://miro.com/app/dashboard/) kept the team organized and allowed for the creation of a domain model, user stories, and lastly wireframe.
 
 
 ### Reflections and Comments

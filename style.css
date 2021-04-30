@@ -108,7 +108,7 @@ h2 {
 }
 
 #resetbutton {
-  margin-top: 40%;
+  margin-top: 38%;
   margin-left: 15%;
   text-align: left;
 }
@@ -153,6 +153,25 @@ h2 {
   cursor: pointer;
   border: 2px solid black;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#resetbutton2 {
+margin-top: -2%;
+margin: 1%;
+margin-left:13.7%;
+}
+
+#reset2 {
+  
+  background-color: tan;
+  font-size: larger;
+  cursor: pointer;
+  border: 2px solid black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#reset2 a {
+  color: black;
 }
 
 
