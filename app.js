@@ -276,7 +276,7 @@ function resetBoard() {
 }
 
 
-resetButton.addEventListener('click',resetBoard)
+resetButton.addEventListener('click',resetBoard())
 //==============================Computer Logic Area==============================
 
   //Is any available move a win
