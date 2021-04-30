@@ -14,6 +14,8 @@ h1{
 }
 #title{
   color: #fbeec1;
+  font-family: 'Fredoka One', cursive;
+  font-size:3em;
 }
 
 .contentBx {
@@ -27,7 +29,7 @@ h1{
   margin: auto;
   margin-bottom: 0;
   font-family: 'Bebas Neue', cursive;
-  font-size:1.9em;
+  font-size:2em;
   font-stretch: expanded;
   border-style:solid;
   border-width: 8px;
@@ -50,7 +52,7 @@ body {
 }
 
 .content {
-  background-color: #fbeec1;
+  background-color: #8f0d08;
   color: black;
   text-shadow: 1px 1px #8d8741;
   margin: auto;
@@ -61,7 +63,7 @@ body {
   color:#FBEEC1;
   border-left:black;
   border-right:black;
-  
+  font-family: 'Fjalla One', sans-serif;  
   } 
 
 .contentBx.active::before{
@@ -78,4 +80,16 @@ label{
  
   margin: auto;
   text-align: center;
+}
+
+.play {
+  background-color: tan;
+  font-size: larger;
+  cursor: pointer;
+  border: 2px solid black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.player{
+  font-family: 'Kanit', sans-serif;
 }
