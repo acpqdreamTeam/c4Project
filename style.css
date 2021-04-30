@@ -1,12 +1,26 @@
 body {
-  background-color: #e6e2d3;
+  background-color: #659dbd;
 }
 
 .title {
   color: black;
-  justify-content: center;
-  margin: 0 auto;
+  /* justify-content: center; */
+ 
+}
+h1 {
+  margin: auto;
   text-align: center;
+  text-shadow: 2px 2px#8d8741;
+}
+h2 {
+  text-transform: capitalize;
+  text-shadow: 2px 2px#8d8741;
+  text-align: center;
+}
+
+#winningAlert {
+  text-transform: uppercase;
+  text-shadow: 2px 2px#8d8741;
 }
 
 .pointer {
@@ -24,13 +38,12 @@ body {
   justify-content: center;
   width: 7%;
   margin: 0 auto;
-  color: black;
   font-size: 45px;
-  background-color: #e6e2d3;
+  background-color: #659dbd;
   border: none;
   border-radius: 30%;
   cursor: pointer;
-  box-shadow: wheat;
+  /* box-shadow:; */
 }
 
 .arrow:hover {
@@ -51,11 +64,11 @@ body {
   width: 710px;
   height: 750px;
   top: 12rem;
-  border-right: black solid 22px;
-  border-left: black solid 22px;
+  border-right: black solid 12px;
+  border-left: black solid 12px;
   padding: 2rem;
-  box-shadow: 10px 15px #e6e2d3;
-  background-color: #b9936c;
+  box-shadow: 10px 15px #8d8741;
+  background-color: #bc986a;
 }
 
 .white {
@@ -95,11 +108,11 @@ body {
 }
 
 #resetbutton {
-  margin-top: 39%;
-  margin-left: 20%;
-  display: flex;
-  text-align: center;
+  margin-top: 38%;
+  margin-left: 15%;
+  text-align: left;
 }
+
 
 #dogecoin {
   background-color: salmon;
@@ -140,6 +153,25 @@ body {
   cursor: pointer;
   border: 2px solid black;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#resetbutton2 {
+margin-top: -2%;
+margin: 1%;
+margin-left:13.7%;
+}
+
+#reset2 {
+  
+  background-color: tan;
+  font-size: larger;
+  cursor: pointer;
+  border: 2px solid black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#reset2 a {
+  color: black;
 }
 
 

@@ -5,18 +5,21 @@
 }
 
 header{
-  color: #FBEEC1;
-  font-family: 'Bebas Neue', cursive;
-}
-
-#title{
   color: black;
-  font-size: 1.5em;
+  text-shadow: 2px 2px #8d8741;
+  
+}
+h1{
+  margin-bottom: 100px;
+}
+#title{
+  color: #fbeec1;
 }
 
 .contentBx {
-  background: #d45320c7;
-  color:#FBEEC1;
+  background: #bc986a;
+  color: #fbeec1;
+  text-shadow: 2px 2px #8d8741;
   cursor: pointer;
   padding: 5px;
   width: 50%;
@@ -33,7 +36,7 @@ header{
 }
 
 body {
-  background-color: #659DBD;
+  background-color:#659dbd;
   min-height: 100vh;
 }
 
@@ -43,26 +46,27 @@ body {
   top:50%;
   right: 20 px;
   transform: translateY(-50%);
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 .content {
-  background-color: #746a62;
+  background-color: #fbeec1;
+  color: black;
+  text-shadow: 1px 1px #8d8741;
   margin: auto;
   width: 50%;
-  padding: 0 18px;
+  padding: 0 20px;
   display: none;
   overflow: hidden;
   color:#FBEEC1;
   border-left:black;
   border-right:black;
-  border-: 5px;
   
   } 
 
 .contentBx.active::before{
   content:'-';
-  font-size:1.5em;
+  font-size:2em;
   transition: 0.2s;
 }
 .content, p{
@@ -70,4 +74,8 @@ body {
   right: 20 px;
   transition: 2s;
 }
-
+label{
+ 
+  margin: auto;
+  text-align: center;
+}
