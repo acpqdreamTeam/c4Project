@@ -1,109 +1,47 @@
-/*
-// This section comes from: https://www.youtube.com/watch?v=Z_IaJQojun8&ab_channel=JustinKim
-//
-//If we use a table instead of divs we can use these for targeting
-var tableRow = document.getElementsByTagName('tr');
-var tableData = document.getElementsByTagName('td');
-var playerTurn = document.querySelector('.player-turn');
-//All cell had the class of "slot" put on them
-const slots = document.querySelectorAll('.slot');
-const resetBtn = document.querySelector('.reset');
-// Log cell coordinates when clicked
-for (i = 0; i < tableData.length; i ++){
-    tableData[i].addEventListener('click', (e) =>{
-        console.log(`${e.target.parentElement.rowIndex},${e.target.cellIndex}`)
-    }
-//The actual change color bit that works with the concepts logged above
-function changeColor(e){
-    // Get clicked column index
-    let column = e.target.cellIndex;
-    let row = [];
-    for (i = 5; i > -1; i--){
-        //Changing everything to be coin images that drop down may cause errors here
-        if (tableRow[i].children[column].style.backgroundColor == 'white'){
-            row.push(tableRow[i].children[column]);
-            if (currentPlayer === 1){
-                row[0].style.backgroundColor = 'red';
-                if (horizontalCheck() || verticalCheck() || diagonalCheck() || diagonalCheck2()){
-                    playerTurn.textContent = `${player1} WINS!!`;
-                    playerTurn.style.color = player1Color;
-                    return alert(`${player1} WINS!!`);
-                }else if (drawCheck()){
-                    playerTurn.textContent = 'DRAW!';
-                    return alert('DRAW!');
-                }else{
-                    playerTurn.textContent = `${player2}'s turn`
-                    return currentPlayer = 2;
-                }
-            }else{
-                row[0].style.backgroundColor = 'yellow';
-                if (horizontalCheck() || verticalCheck() || diagonalCheck() || diagonalCheck2()){
-                    playerTurn.textContent = `${player2} WINS!!`;
-                    playerTurn.style.color = player2Color;
-                    return alert(`${player2} WINS!!`);
-                }else if (drawCheck()){
-                    playerTurn.textContent = 'DRAW!';
-                    return alert('DRAW!');
-                }else{
-                    playerTurn.textContent = `${player1}'s turn`;
-                    return currentPlayer = 1;
-                }
-                
-            }
-        }
-    }
-   
-}
-//Example of childNodes
-var index = 1; // second element
-var child = document.getElementById('id33322010100167').childNodes[index]
-*/
-
-/*
-//These sections come from https://www.youtube.com/watch?v=Hi5hEH1KNEc&ab_channel=JustinKim
-const getCellLocation = (cell) => {
-  const classList = getClassListArray(cell);
-  const rowClass = classList.find(className => className.includes('row'));
-  const colClass = classList.find(className => className.includes('col'));
-  const rowIndex = rowClass[4];
-  const colIndex = colClass[4];
-  const rowNumber = parseInt(rowIndex, 10);
-  const colNumber = parseInt(colIndex, 10);
-  return [rowNumber, colNumber];
-};
-This one seems more complicated and I would prefer to use the table method of the section above for the table pre-built functions
-*/
-
 //==============================Global Variable Setup==============================
 
 //Setup, might need to find a way to not select top row of locations for hover arrow to appear, try making them th instead of tr elements?
 let tableRows = document.getElementsByTagName('tr');
 let tableDataCells = document.getElementsByTagName('td');
+const arrows = document.getElementsByClassName('arrow');
+
 //This needs a div setup with this class
 let activePlayer = document.getElementById('activePlayer');
+let resetButton = document.getElementById('reset');
+let winnerAlert = document.getElementById('winningAlert')
 
 //LOOKHERE: change later to something that reads out of memory
-let player1Name = 'Bob';
-let player2Name = 'Jeff';
+//=================Local Get Storage Code==========================
+let player1Name = null;
+let player2Name = null;
+
+function getplayerOne(){
+  let retrievedName = localStorage.getItem('Player 1');
+  console.log(retrievedName, "is Player 1's name");
+  if (retrievedName !== null) {
+      let parsedOrders = JSON.parse(retrievedName);
+      player1Name = parsedOrders;
+  }
+}
+
+function getplayerTwo(){
+  let retrievedName = localStorage.getItem('Player 2');
+  console.log(retrievedName, "is Player 2's name");
+  if (retrievedName !== null) {
+      let parsedOrders = JSON.parse(retrievedName);
+      player2Name = parsedOrders;
+  }
+}
+
+getplayerOne();
+getplayerTwo();
+
+activePlayer.textContent = player1Name;
+
 let player1Color = 'dogecoin1';
 let player2Color = 'dogecoin2';
 
-
-
-/*
-//Add some sort of event listener here that will call dropToken when triggered
-//This one chould just log the click location
-for (i = 0; i < tableDataCells.length; i ++){
-  tableDataCells[i].addEventListener('click', (e) =>{
-      console.log(`${e.target.parentElement.rowIndex},${e.target.cellIndex}`)
-      dropToken(e);
-  });
-};
-*/
-
-//event listener v2
-const arrows = document.getElementsByClassName('arrow');
-
+//Setup event listener for each individual arrow to know which column is being selected
 for(let arrow of arrows){
   arrow.addEventListener('click', (e) =>{
     dropToken(e);
@@ -116,10 +54,12 @@ for(let arrow of arrows){
 //In the future the background color change might need to be replaced with adding an <img> element within the target cell location instead of changing background color
 function dropToken (clickEvent){
 
+  //Setup variables to pass along to the searching function so it knows where to start
   let columnIndex = null;
-  let yIndex = null;
+  let rowIndex = null;
+  let target = null;
 
-  //Look through all the down arrows
+  //Look through all the down arrows to see which one was clicked. That is the column we are looking for
   for (let i = 0; i < arrows.length; i++){
     
     //If the event arrow is the same as that index array
@@ -130,27 +70,24 @@ function dropToken (clickEvent){
     }
   }
 
-  //Get column index from click event
-  //let columnIndex = clickEvent.target.cellIndex;
-  let target = null;
-
-  //Look through column from bottom to top
+  //Look through column from bottom to top to find the lowest open space. That is the row we are looking for
   for (i = 5; i > -1; i--){
     
-    //check for "white" background or whatever empty is
+    //check for "white" backgroundwhich is 'empty'
     if (tableRows[i].children[columnIndex].className === 'white'){
       
       //Put all target cells in that column with the white background or whatever into an array
       target = tableRows[i].children[columnIndex];
 
       //Store Y value for later use in winning check
-      yIndex = i;
+      rowIndex = i;
 
       //After finding the lowest empty slot break out of the for loop by changing i
       i = -5;
     }
   }
 
+  //We now have the row and column, go about actually placing tokens
   //Check to see who is the active player making this move
   if(activePlayer.textContent === player1Name){
 
@@ -159,8 +96,8 @@ function dropToken (clickEvent){
 
     //Check for win, will implement after board can be setup
     console.log(columnIndex);
-    console.log(yIndex);
-    checkLocation(columnIndex, yIndex, player1Color);
+    console.log(rowIndex);
+    checkLocation(columnIndex, rowIndex, player1Color);
 
     //Change active player
     activePlayer.textContent = player2Name;
@@ -171,7 +108,7 @@ function dropToken (clickEvent){
     target.className = player2Color;
 
     //Check for win, will implement after board can be setup
-    checkLocation(columnIndex, yIndex, player2Color);
+    checkLocation(columnIndex, rowIndex, player2Color);
     
     //Change active player
     activePlayer.textContent = player1Name;
@@ -219,6 +156,7 @@ function checkLocation (xCord, yCord, colorTarget){
   
   
   if(winningState){
+    winnerAlert.textContent = `The Winner is ${activePlayer.textContent}`
     console.log('You Win');
     //LOOKHERE this is where win logic should go
   }
@@ -236,17 +174,20 @@ function checkDirection (xCord, yCord, direction, colorTarget){
   target = tableRows[yCord].children[xCord];
   console.log(target);
 
+  //Check to see if the target location is the desired value
   if(target.className === colorTarget){
+
+    //If correct increment depth to show we found a valid target
     depth++;
 
-    console.log('old cords' + xCord + yCord);
+    //console.log('old cords' + xCord + yCord);
   
     //Moved updating of peak location into it's own function
     let newCords = updateCords(xCord, yCord, direction);
     xCord = newCords[0];
     yCord = newCords[1];
   
-    console.log('new cords' +newCords);
+    //console.log('new cords' +newCords);
   
     //Check if next calculated location is valid, and if not change gating boolean
     if(xCord < 0 || xCord > 6 || yCord < 0 || yCord > 5 || xCord == null || yCord == null){
@@ -254,7 +195,6 @@ function checkDirection (xCord, yCord, direction, colorTarget){
     }
 
   }
-
 
   //If we found the correct token to increment depth and the next target is valid run it again
   if(validNextTarget && depth){
@@ -331,6 +271,7 @@ function resetBoard() {
     coinArea.className = 'white';
   }
   activePlayer.textContent = player1Name;
+  winnerAlert.textContent = ' ';
 }
 
 

@@ -49,8 +49,8 @@ body {
   position: absolute;
   transform: translate(-50%);
   width: 710px;
-  height: 780px;
-  top: 7rem;
+  height: 750px;
+  top: 12rem;
   border-right: black solid 22px;
   border-left: black solid 22px;
   padding: 2rem;
@@ -91,16 +91,13 @@ body {
   height: 100px;
   border: 2px solid black;
   border-radius: 60%;
-  cursor: pointer;
   margin: 100px;
 }
 
 #resetbutton {
-  position: absolute;
-  top: 928px;
-  width: 150px;
-  height: 150px;
-  margin-left: 22%;
+  margin-top: 39%;
+  margin-left: 20%;
+  display: flex;
   text-align: center;
 }
 
@@ -138,14 +135,13 @@ body {
 }
 
 #reset {
+  background-color: tan;
+  font-size: larger;
   cursor: pointer;
   border: 2px solid black;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.grid table tr td:hover {
-  background-color: rgba(253, 220, 112, 0.623);
-}
 
 table {
  border-collapse: separate;
